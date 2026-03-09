@@ -1,13 +1,14 @@
 import requests
 import pandas as pd
 from datetime import datetime
-import os
 import time
 import html
+import os
 
-# --- 1. 설정 및 수집 대상 단지 목록 ---
-TELEGRAM_TOKEN = "8683637658:AAHOUm2Q04bEqOR83TvEpoP19d26v-sZzjg"
-CHAT_ID = "98017929"
+# 깃허브 Secrets에서 값을 읽어옵니다.
+TELEGRAM_TOKEN = os.getenv("8683637658:AAHOUm2Q04bEqOR83TvEpoP19d26v-sZzjg")
+CHAT_ID = os.getenv("98017929")
+
 
 # 여기에 수집하고 싶은 단지번호(hscpNo)와 이름을 추가하세요.
 COMPLEX_LIST = [
