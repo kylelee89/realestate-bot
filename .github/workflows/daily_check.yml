@@ -2,9 +2,9 @@ name: Naver Land Bot
 
 on:
   schedule:
-    # UTC 기준이므로 한국 시간(KST) 오후 5시 40분은 UTC 오전 8시 40분입니다.
+    # 한국 시간(KST) 오후 5시 40분 (UTC 기준 오전 8시 40분)
     - cron: '40 8 * * *'
-  workflow_dispatch: # 수동 실행 버튼 추가
+  workflow_dispatch: # 수동 실행 버튼
 
 jobs:
   build:
@@ -14,7 +14,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: appleboy/setup-python@v2
+        # 여기서 에러가 났던 부분을 공식 액션으로 수정했습니다.
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
